@@ -19,5 +19,5 @@ plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and c
 plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf >= open_tf ? high_tf : na, style=shape.triangledown, location=location.belowbar, color=#13f403, size = size.small)
 
 
-//by RA_16/04/24
+//by RA_16/04/24_v.1
 
