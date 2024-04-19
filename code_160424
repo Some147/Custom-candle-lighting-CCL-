@@ -15,9 +15,8 @@ isCandleInRange(candleSize, minPrice, maxPrice) =>
     (high_tf - low_tf) >= candleSize and high_tf >= minPrice and low_tf <= maxPrice
 
 // Рисуем маркеры
-plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf < open_tf ? low_tf : na, style=shape.triangleup, location=location.abovebar, color=color.rgb(136, 0, 254), size = size.small)
-plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf >= open_tf ? high_tf : na, style=shape.triangledown, location=location.belowbar, color=#13f403, size = size.small)
+plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf < open_tf ? low_tf : na, style=shape.labeldown, location=location.abovebar, color=color.rgb(157, 48, 252), size = size.tiny)
+plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf >= open_tf ? high_tf : na, style=shape.labelup, location=location.belowbar, color=color.rgb(16, 255, 76), size = size.tiny)
 
 
-//by RA_16/04/24_v.1
-
+//by_YourTradingSensei©_17/04/24_v.2.0
