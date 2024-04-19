@@ -1,20 +1,20 @@
 //@version=5
 indicator("Custom candle lighting", shorttitle="CCL", overlay=true)
 
-// Входные параметры
-candleSize = input.float(5.5, title="Размер свечи")
-maxPriceRange = input.float(100.0, title="Максимальная цена")
-minPriceRange = input.float(70.0, title="Минимальная цена")
+// input parameters
+candleSize = input.float(5.5, title="Size of the candles ")
+maxPriceRange = input.float(100.0, title="Max price")
+minPriceRange = input.float(70.0, title="Min price")
 
-// Получаем данные свечей текущего таймфрейма
+// Getting the candle data of the current timeframe
 currentTF = timeframe.period
 [open_tf, high_tf, low_tf, close_tf] = request.security(syminfo.tickerid, currentTF, [open, high, low, close])
 
-// Функция для проверки, соответствует ли свеча заданным критериям
+// Function to check whether the candle meets the specified criteria
 isCandleInRange(candleSize, minPrice, maxPrice) =>
     (high_tf - low_tf) >= candleSize and high_tf >= minPrice and low_tf <= maxPrice
 
-// Рисуем маркеры
+// Drawing marks
 plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf < open_tf ? low_tf : na, style=shape.labeldown, location=location.abovebar, color=color.rgb(157, 48, 252), size = size.tiny)
 plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf >= open_tf ? high_tf : na, style=shape.labelup, location=location.belowbar, color=color.rgb(16, 255, 76), size = size.tiny)
 
