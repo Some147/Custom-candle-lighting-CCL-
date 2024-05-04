@@ -25,5 +25,5 @@ plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and c
 plotshape(series=isCandleInRange(candleSize, minPriceRange, maxPriceRange) and close_tf >= open_tf ? high_tf : na, style=shape.labelup, location=location.belowbar, color=color.rgb(16, 255, 76), size = size.tiny)
 
 //-----------------------------------------------------------------------------{
-//by_YourTradingSensei©_17/04/24_v.2.0_https://github.com/Some147
+//Custom candle lighting(CCL) © 2024 by YourTradingSensei is licensed under CC BY-NC-SA 4.0. To view a copy of this license, visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 //-----------------------------------------------------------------------------}
